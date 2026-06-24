@@ -30,6 +30,9 @@
     --ff-light: 'PoppinsLight', sans-serif;
     --ff-medium: 'PoppinsMedium', sans-serif;
     --ff-semibold: 'PoppinsSemiBold', sans-serif;
+
+    /* borders */
+    --card-top-border: 3px solid;
 }
 
 *,
@@ -138,35 +141,30 @@ body {
 }
 
 .main__card--supervisor {
-    border-block-start: 3px solid var(--cyan);
+    border-block-start: var(--card-top-border) var(--cyan);
 }
 
 .main__card--team-builder {
-    border-block-start: 3px solid var(--red);
+    border-block-start: var(--card-top-border) var(--red);
 }
 
 .main__card--karma {
-    border-block-start: 3px solid var(--orange);
+    border-block-start: var(--card-top-border) var(--orange);
 }
 
 .main__card--calculator {
-    border-block-start: 3px solid var(--blue);
+    border-block-start: var(--card-top-border) var(--blue);
 }
 
 .main__wrapper {
     display: grid;
     gap: clamp(1.563rem, calc(1.449rem + 0.568vw), 1.875rem);
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: clamp(0.938rem, calc(0.892rem + 0.227vw), 1.063rem);
 }
 
-@media screen and (max-width: 599px) {
-    .main__wrapper {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        padding: clamp(0.938rem, calc(0.892rem + 0.227vw), 1.063rem);
-    }
-}
-
-@media screen and (min-width: 600px) and (max-width: 999px) {
+@media screen and (min-width: 37.5rem) and (max-width: 62.438rem) {
     .main__wrapper {
         grid-template-columns: 1fr 1fr;
     }
@@ -192,7 +190,7 @@ body {
     }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 62.5rem) {
     .main__wrapper {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(4, 1fr);
