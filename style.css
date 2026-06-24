@@ -33,6 +33,9 @@
 
     /* borders */
     --card-top-border: 3px solid;
+
+    /* shadows */
+    --card-shadow: 0 8px 20px rgba(0, 0, 0, .08);
 }
 
 *,
@@ -129,8 +132,7 @@ body {
     padding: clamp(1.563rem, calc(1.449rem + 0.568vw), 1.875rem);
     border-radius: 4px;
     background: white;
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, .08);
+    box-shadow: var(--card-shadow);
 }
 
 .main__card-img {
@@ -164,7 +166,7 @@ body {
     padding: clamp(0.938rem, calc(0.892rem + 0.227vw), 1.063rem);
 }
 
-@media screen and (min-width: 37.5rem) and (max-width: 62.438rem) {
+@media screen and (min-width: 37.5rem) {
     .main__wrapper {
         grid-template-columns: 1fr 1fr;
     }
